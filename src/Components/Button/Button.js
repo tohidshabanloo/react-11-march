@@ -1,5 +1,11 @@
-const Button = ({ children, backgroundColor }) => {
-  return <button style={{ backgroundColor }}>{children}</button>;
+import "./Button.css";
+
+const Button = ({ children, backgroundColor, style }) => {
+  return (
+    <button className="button" style={{ backgroundColor, ...style }}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
