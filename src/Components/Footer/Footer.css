@@ -2,9 +2,12 @@
   text-align: center;
   color: black;
   font-size: 20px;
-  margin-top: 446px;
-  background-color: rgb(213, 1, 255);
-  padding: 20px 10px;
   background-color: #eee;
   box-shadow: 50px 0px 6px #ccc;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding-top: 20px;
+  font-weight: bold;
 }
