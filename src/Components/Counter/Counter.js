@@ -10,13 +10,17 @@ const Counter = () => {
   const decreament = () => {
     setcount(count - 1);
   };
+  const colorHnadler = () => {
+    if (count > 10) return "green";
+    if (count < 0) return "red";
+  };
 
   return (
     <div className="counter">
       <button onClick={increament} backgroundColor="black">
         +
       </button>
-      <div>{count}</div>
+      <div style={{ color: colorHnadler() }}>{count}</div>
       <button
         onClick={decreament}
         backgroundColor="black"
