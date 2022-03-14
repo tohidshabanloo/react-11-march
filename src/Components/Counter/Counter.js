@@ -4,31 +4,51 @@ import "./Counter.css";
 
 const Counter = () => {
   const [count, setcount] = useState(10);
+  const [limit, setlimit] = useState(10);
   const increament = () => {
-    setcount(count + 1);
+    if (count < limit) {
+      setcount(count + 1);
+    }
   };
   const decreament = () => {
-    setcount(count - 1);
+    if (count > 0) {
+      setcount(count - 1);
+    }
   };
   const colorHnadler = () => {
-    if (count > 10) return "green";
-    if (count < 0) return "red";
+    if (count > 5) return "green";
+    if (count < 2) return "red";
+  };
+  const changeHandler = (value) => {
+    setlimit(value);
   };
 
   return (
-    <div className="counter">
-      <button onClick={increament} backgroundColor="black">
-        +
-      </button>
-      <div style={{ color: colorHnadler() }}>{count}</div>
-      <button
-        onClick={decreament}
-        backgroundColor="black"
-        style={{ marginLeft: 10 }}
-      >
-        -
-      </button>
-    </div>
+    <>
+      <div>
+        <label htmlFor="">limit</label>
+        <input
+          type="number"
+          onChange={(event) => changeHandler(event.target.value)}
+        />
+      </div>
+      <div className="counter" style={{ color: colorHnadler() }}>
+        <button
+          style={{ backgroundColor: colorHnadler() }}
+          onClick={increament}
+        >
+          +
+        </button>
+        <div style={{ color: colorHnadler() }}>{count}</div>
+        <button
+          style={{ backgroundColor: colorHnadler() }}
+          onClick={decreament}
+          style={{ marginLeft: 10 }}
+        >
+          -
+        </button>
+      </div>
+    </>
   );
 };
 
