@@ -17,7 +17,7 @@ const Counter = () => {
   };
   const colorHnadler = () => {
     if (count > 5) return "green";
-    if (count < 2) return "red";
+    if (count <= 5) return "red";
   };
   const changeHandler = (value) => {
     setlimit(value);
@@ -32,19 +32,10 @@ const Counter = () => {
           onChange={(event) => changeHandler(event.target.value)}
         />
       </div>
-      <div className="counter" style={{ color: colorHnadler() }}>
-        <button
-          style={{ backgroundColor: colorHnadler() }}
-          onClick={increament}
-        >
-          +
-        </button>
-        <div style={{ color: colorHnadler() }}>{count}</div>
-        <button
-          style={{ backgroundColor: colorHnadler() }}
-          onClick={decreament}
-          style={{ marginLeft: 10 }}
-        >
+      <div className="counter" style={{ backgroundColor: colorHnadler() }}>
+        <button onClick={increament}>+</button>
+        <div style={{ color: "white" }}>{count}</div>
+        <button onClick={decreament} style={{ marginLeft: 10 }}>
           -
         </button>
       </div>
