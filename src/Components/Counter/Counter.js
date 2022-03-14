@@ -34,7 +34,7 @@ const Counter = () => {
       </div>
       <div className="counter" style={{ backgroundColor: colorHnadler() }}>
         <button onClick={increament}>+</button>
-        <div style={{ color: "white" }}>{count}</div>
+        <div style={{ color: "white", paddingLeft: 10 }}>{count}</div>
         <button onClick={decreament} style={{ marginLeft: 10 }}>
           -
         </button>
