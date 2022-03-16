@@ -26,8 +26,11 @@ const Counter = () => {
   return (
     <>
       <div>
-        <label htmlFor="">limit</label>
+        <label class="limit" htmlFor="">
+          limit
+        </label>
         <input
+          class="limitbox"
           type="number"
           onChange={(event) => changeHandler(event.target.value)}
         />
